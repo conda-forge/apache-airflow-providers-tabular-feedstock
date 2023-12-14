@@ -16,29 +16,26 @@ build:
 
 requirements:
   host:
-    - python >=3.8
-    - setuptools >=67.2.0,<68.0.0
+    - python >=3.8,<4.dev0
+    - flit-core >=3.2,<4
     - pip
   run:
     - python >=3.8
-    - apache-airflow >=2.5.0
+    - apache-airflow >=2.6.0
 
 test:
   imports:
     - airflow.providers.tabular
-    - airflow.providers.tabular.hooks
   commands:
     - pip check
   requires:
     - pip
 
 about:
-  home: https://airflow.apache.org/
-  summary: Provider for Apache Airflow. Implements apache-airflow-providers-tabular package
+  home: https://github.com/apache/airflow/
+  summary: Provider package apache-airflow-providers-tabular for Apache Airflow
   license: Apache-2.0
-  license_file:
-    - LICENSE
-    - NOTICE
+  license_file: airflow/providers/tabular/LICENSE
   license_family: Apache
   doc_url: https://airflow.apache.org/docs/apache-airflow-providers-tabular/stable/index.html
   dev_url: https://github.com/apache/airflow/
