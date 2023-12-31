@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_tabular-{{ version }}.tar.gz
   sha256: 3cce4ab254973ca66e969b387a3e68ad0be83ac15c15ede957ed03c850907c35
 
 build:
