@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-tabular" %}
-{% set version = "1.4.1" %}
+{% set version = "1.5.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_tabular-{{ version }}.tar.gz
-  sha256: 3cce4ab254973ca66e969b387a3e68ad0be83ac15c15ede957ed03c850907c35
+  sha256: e87c25fae6c6fcc8f8d575d567cf72934614039aeba8452edbcd92098dbd1967
 
 build:
   noarch: python
@@ -21,7 +21,7 @@ requirements:
     - pip
   run:
     - python >=3.8
-    - apache-airflow >=2.6.0
+    - apache-airflow >=2.7.0
 
 test:
   imports:
