@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-tabular" %}
-{% set version = "1.5.0" %}
+{% set version = "1.5.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_tabular-{{ version }}.tar.gz
-  sha256: e87c25fae6c6fcc8f8d575d567cf72934614039aeba8452edbcd92098dbd1967
+  sha256: 40456b53915fad596d35bf0c86c9d6c6b5c53fd07282b554b0bc2706b20fb608
 
 build:
   noarch: python
@@ -20,6 +20,7 @@ requirements:
     - flit-core >=3.2,<4
     - pip
   run:
+    - apache-airflow-providers-apache-iceberg
     - python >=3.8
     - apache-airflow >=2.7.0
 
