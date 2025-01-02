@@ -6,22 +6,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_tabular-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_tabular-{{ version }}.tar.gz
   sha256: 94c879cafcb5255d74b6f1f8b53ba9e0c526fdb1e9a3446b43035f1dcc69e5b9
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8,<4.dev0
+    - python {{ python_min }}
     - flit-core >=3.2,<4
     - pip
   run:
     - apache-airflow-providers-apache-iceberg
-    - python >=3.8
+    - python >={{ python_min }}
     - apache-airflow >=2.8.0
 
 test:
@@ -31,6 +31,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/apache/airflow/
